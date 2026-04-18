@@ -17,7 +17,7 @@ Exit codes:
 
 Usage:
   uv run validate_new_file.py --directory specs --extension .md
-  uv run validate_new_file.py -d output -e .json --max-age 10
+  uv run validate_new_file.py -d output -e .json --max-age-mins 10
 """
 
 import argparse
@@ -173,7 +173,7 @@ def parse_args() -> argparse.Namespace:
         help=f'File extension to match (default: {DEFAULT_EXTENSION})'
     )
     parser.add_argument(
-        '--max-age',
+        '--max-age-mins',
         type=int,
         default=DEFAULT_MAX_AGE_MINUTES,
         help=f'Maximum file age in minutes (default: {DEFAULT_MAX_AGE_MINUTES})'
